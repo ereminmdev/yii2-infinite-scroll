@@ -23,7 +23,7 @@ class InfiniteScroll extends LinkPager
 
     /**
      * @var array the client options
-     * @see https://github.com/RubaXa/Sortable#options
+     * @see https://infiniteajaxscroll.com/docs/options.html
      */
     public $clientOptions = [];
     /**
@@ -58,7 +58,7 @@ class InfiniteScroll extends LinkPager
         $options = ArrayHelper::merge([
             'container' => '.list-view',
             'item' => '.item',
-            'pagination' => '#' . $this->id,
+            'pagination' => '.pagination',
             'next' => '.' . $this->nextPageCssClass . ' > a',
         ], $this->clientOptions);
 
