@@ -1,0 +1,25 @@
+{
+  "name": "ereminmdev/yii2-infinite-scroll",
+  "description": "Infinite ajax scroll widget for Yii framework.",
+  "keywords": ["yii2","widget","pager","pagination","javascript"],
+  "homepage": "https://bitbucket.org/ereminmdev/yii2-infinite-scroll",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael Eremin",
+      "email": "ereminmdev@gmail.com",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "yiisoft/yii2": "~2.0.1",
+    "webcreate/jquery-ias": "^2.2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "ereminmdev\\yii2\\infinite_scroll\\": ""
+    }
+  }
+}
