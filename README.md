@@ -53,3 +53,15 @@ or insert as widget into view:
     ]) ?>
 </div>
 ```
+
+When updating content throw ajax, don't forget to reinitialize plugin:
+
+```
+$(document).on('click', '#sample_filter', function (event) {
+    $('.list-view').load('sample_url', function () {
+        //reinitialize plugin after load success
+        jQuery.ias().reinitialize();
+    });
+    event.preventDefault();
+});
+```
