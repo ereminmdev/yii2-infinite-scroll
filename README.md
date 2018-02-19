@@ -20,7 +20,7 @@ Add as pager component:
 echo ListView::widget([
      'dataProvider' => $dataProvider,
      'itemOptions' => ['class' => 'item'],
-     'pager' => ['class' => \ereminmdev\yii2\infinite_scroll\InfiniteScroll::className()]
+     'pager' => ['class' => \ereminmdev\yii2\infinite_scroll\InfiniteScroll::class]
 ]);
 ```
 
