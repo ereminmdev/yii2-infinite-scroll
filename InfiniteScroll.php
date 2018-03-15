@@ -8,10 +8,10 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\widgets\LinkPager;
 
-
 /**
  * Class InfiniteScroll
  * @package ereminmdev\yii2\infinite_scroll
+ * @see https://infiniteajaxscroll.com
  */
 class InfiniteScroll extends LinkPager
 {
@@ -32,6 +32,11 @@ class InfiniteScroll extends LinkPager
      */
     public $clientExtensions = [];
     /**
+     * @var array of pairs (event => function).
+     * @see https://infiniteajaxscroll.com/docs/events.html
+     */
+    public $clientEvents = [];
+    /**
      * @var Pagination the pagination object that this pager is associated with.
      * You must set this property in order to make InfiniteScroll work.
      */
@@ -40,7 +45,6 @@ class InfiniteScroll extends LinkPager
      * @var int maximum number of page buttons that can be displayed. Set to 0, because not needed.
      */
     public $maxButtonCount = 0;
-
 
     /**
      * @inheritdoc
@@ -63,6 +67,10 @@ class InfiniteScroll extends LinkPager
         ], $this->clientOptions);
 
         $view->registerJs('var ' . $clientVar . ' = jQuery.ias(' . Json::encode($options, JSON_FORCE_OBJECT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ');');
+
+        foreach ($this->clientEvents as $eventName => $eventFunc) {
+            $view->registerJs($clientVar . '.on("' . $eventName . '", ' . $eventFunc . ')');
+        }
 
         $extensions = ArrayHelper::merge([
             self::EXT_TRIGGER => [

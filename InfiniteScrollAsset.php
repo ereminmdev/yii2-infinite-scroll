@@ -4,7 +4,6 @@ namespace ereminmdev\yii2\infinite_scroll;
 
 use yii\web\AssetBundle;
 
-
 /**
  * Class InfiniteScrollAsset
  * @package ereminmdev\yii2\infinite_scroll

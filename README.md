@@ -50,6 +50,9 @@ or insert as widget into view:
                 'html' => 'You reached the end.',
             ],
         ],
+        'clientEvents' => [
+            'rendered' => new \yii\web\JsExpression('function() { console.log("on rendered"); }'),
+        ],
     ]) ?>
 </div>
 ```
