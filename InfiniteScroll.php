@@ -47,7 +47,7 @@ class InfiniteScroll extends LinkPager
     public $maxButtonCount = 0;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function run()
     {
