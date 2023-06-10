@@ -6,7 +6,7 @@ Based on jQuery plugin: https://infiniteajaxscroll.com
 
 ## Install
 
-``composer require ereminmdev/yii2-infinite-scroll``
+``composer require --prefer-dist ereminmdev/yii2-infinite-scroll``
 
 ## Documentation
 
